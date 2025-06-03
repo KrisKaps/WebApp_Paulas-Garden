@@ -1,0 +1,89 @@
+@import './style.css';
+@import './unterseite.css';
+
+main {
+    background-image: url(../imgs/angebote-pic-menu.png);
+    font-family: var(--ff-text);
+}
+
+.content .text{
+    margin-bottom: 48px;
+}
+
+.slider {
+    display: flex;
+    gap: 32px;
+    flex-wrap: nowrap;
+}
+
+.product-box {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 305px;
+}
+
+.product-box img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 5px 5px 10px var(--shadow-color);
+}
+
+.product-box h3 {
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-text);
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.product-box p {
+    font-size: var(--fs-small);
+}
+
+.product-box .price {
+    font-size: var(--fs-medium);
+    text-align: right;
+    margin-top: auto;
+}
+
+
+
+
+
+.slider-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    /* Firefox: schmaler, aber sichtbar */
+    scrollbar-color: transparent transparent;
+    /* Standard: unsichtbar */
+}
+
+.slider-container:hover,
+.slider-container:active {
+    scrollbar-color: #bbb transparent;
+    /* Beim Hover/Scrollen: sichtbar */
+}
+
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+    background: transparent;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.slider-container:hover::-webkit-scrollbar-thumb,
+.slider-container:active::-webkit-scrollbar-thumb {
+    background: #bbb;
+}
+
+.slider-container::-webkit-scrollbar-track {
+    background: transparent;
+}
