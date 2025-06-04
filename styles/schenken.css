@@ -1,0 +1,239 @@
+@import './style.css';
+@import './unterseite.css';
+
+main {
+    background-image: url(../imgs/events-pic-menu.png);
+}
+
+.content {
+    display: flex;
+    gap: 48px;
+    overflow-y: auto;
+}
+
+.content > * {
+    flex: 1;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-content .text{
+    margin-bottom: 16px;
+}
+
+
+
+.two-col-container {
+    display: flex;
+    gap: 16px;
+}
+
+.two-col-container > * {
+    flex: 1;
+}
+
+label {
+    margin: 12px 0;
+}
+
+input {
+    margin-top: 8px;
+}
+
+button {
+    font-family: var(--ff-text);
+    font-size: var(--fs-text);
+    padding: 12px 32px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.gutschein-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.voucher {
+    width: 148mm;
+    height: 105mm;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.voucher-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.voucher-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    /* Abstand zwischen den Zeilen */
+}
+
+.voucher-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Abstand zwischen Label und Wert */
+}
+
+.voucher-label {
+    font-size: 18px;
+    margin: 0;
+    white-space: nowrap;
+    /* Verhindert Zeilenumbrüche */
+}
+
+.voucher-name,
+.voucher-amount {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    display: inline-block;
+    width: 100%;
+    flex: 1;
+    max-width: 30ch;
+    /* Begrenzung auf 30 Zeichen */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.voucher-logo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.controls h3 {
+    margin-bottom: 10px;
+}
+
+#background-options {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.background-option {
+    width: 140px;
+    text-align: center;
+}
+
+
+.background-option span {
+    font-size: var(--fs-small);
+}
+
+.background-option span.selected {
+    font-weight: var(--fw-medium);
+}
+
+
+.thumbnail {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.thumbnail.selected {
+    border: 5px solid var(--main-color);
+}
+
+.name-input {
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.amount-options label {
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.amount-options input {
+    margin-right: 5px;
+}
+
+
+
+
+
+
+.slider-container {
+    height: 100%;
+    overflow-y: auto;         /* Nur vertikales Scrollen erlauben */
+    overflow-x: hidden;       /* Horizontales Scrollen verhindern */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    /* Firefox: schmaler, aber sichtbar */
+    scrollbar-color: var(--gray) transparent;
+    /* Standard: unsichtbar */
+}
+
+.slider-container:hover,
+.slider-container:active {
+    scrollbar-color: var(--gray) transparent;
+    /* Beim Hover/Scrollen: sichtbar */
+}
+
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+    background: transparent;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.slider-container:hover::-webkit-scrollbar-thumb,
+.slider-container:active::-webkit-scrollbar-thumb {
+    background: var(--gray);
+}
+
+.slider-container::-webkit-scrollbar-track {
+    background: transparent;
+}

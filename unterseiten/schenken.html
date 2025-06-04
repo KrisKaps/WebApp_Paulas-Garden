@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <link rel="stylesheet" href="https://use.typekit.net/ogc4cwi.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/unterseite.css">
+    <link rel="stylesheet" href="../styles/schenken.css">
 </head>
+
 <body>
     <main>
         <header>
@@ -16,8 +19,103 @@
             <a href="../index.html"><img src="../imgs/Logo - Black.svg" alt="Paula's Garden Logo" class="logo"></a>
         </header>
         <section class="content">
-            
+            <section class="text-content">
+                <section class="text">
+                    <h2>Verschenke pures Gartenglück!</h2>
+                    <p>Wähle eins der Motive sowie deinen Wunschbetrag aus. Schreibe den Namen des beschenkten Menschen
+                        in die Eingabemaske.</p>
+                </section>
+                <section class="slider-container">
+                    <form class="slider">
+                        <section class="controls">
+                            <h3>Wähle ein Motiv:</h3>
+                            <div id="background-options">
+                                <div class="background-option">
+                                    <img class="thumbnail" src="../imgs/gutschein-roses-and-more.png" alt="Roses and more" data-bg="../imgs/gutschein-roses-and-more.png">
+                                    <span>Roses and more</span>
+                                </div>
+                                <div class="background-option">
+                                    <img class="thumbnail" src="../imgs/gutschein-flowerpower.png" alt="Flowerpower" data-bg="../imgs/gutschein-flowerpower.png">
+                                    <span>Flowerpower</span>
+                                </div>
+                                <div class="background-option">
+                                    <img class="thumbnail" src="../imgs/gutschein-happy-bees.png" alt="Happy Bees" data-bg="../imgs/gutschein-happy-bees.png">
+                                    <span>Happy Bees</span>
+                                </div>
+                                <div class="background-option">
+                                    <img class="thumbnail" src="../imgs/gutschein-spooky-halloween.png" alt="Spooky Halloween" data-bg="../imgs/gutschein-spooky-halloween.png">
+                                    <span class="selected">Spooky Halloween</span>
+                                </div>
+                            </div>
+                            <h3>Gib den Namen ein:</h3>
+                            <input type="text" id="name-input" class="name-input" placeholder="Name der Person"
+                                maxlength="30">
+                            <h3>Wähle den Betrag:</h3>
+                            <div class="amount-options">
+                                <label><input type="radio" name="amount" class="amount-option" value="10,00"> 10 €</label>
+                                <label><input type="radio" name="amount" class="amount-option" value="25,00"> 25 €</label>
+                                <label><input type="radio" name="amount" class="amount-option" value="50,00"> 50 €</label>
+                                <label><input type="radio" name="amount" class="amount-option" value="100,00"> 100 €</label>
+                            </div>
+                        </section>
+                        <section class="infos">
+                            <h3>Angaben zum Käufer</h3>
+                            <div class="two-col-container">
+                                <label for="name">Vorname*
+                                    <input type="text" id="name" class="name" placeholder="Vorname des Käufers" required>
+                                </label>
+                                <label for="lastname">Name*
+                                    <input type="text" id="lastname" class="lastname" placeholder="Name des Käufers" required>
+                                </label>
+                            </div>
+                            <label for="strasse">Straße*
+                                <input type="text" id="strasse" class="strasse" placeholder="Adresse des Käufers" required>
+                            </label>
+                            <div class="two-col-container">
+                                <label for="hausnummer">Hausnummer*
+                                    <input type="text" id="hausnummer" class="hausnummer" placeholder="Hausnummer des Käufers" required>
+                                </label>
+                                <label for="postleitzahl">Postleitzahl*
+                                    <input type="text" id="postleitzahl" class="postleitzahl" placeholder="Postleitzahl des Käufers" required>
+                                </label>
+                            </div>
+                            <label for="ort">Ort*
+                                <input type="text" id="ort" class="ort" placeholder="Hausnummer des Käufers" required>
+                            </label>
+                            <label for="datenschutz">
+                                <input type="checkbox" id="datenschutz" class="datenschutz" required>
+                                Ich habe die Datenschutzerklärung zur Kenntnis genommen.
+                        Ich stimme zu, dass meine Angaben und Daten elektronisch erhoben und gespeichert werden. Die Einwilligung kann ich jederzeit für die Zukunft widerrufen. *
+                            </label>
+                            <p>* Plichtfeld</p>
+                            <button>Jetzt verpflichtend kaufen</button>
+                        </section>
+                    </form>
+                </section>
+            </section>
+            <div class="gutschein-content">
+                <h3>Dein individueller Gutschein</h3>
+                <div class="voucher" id="voucher-preview"
+                    style="background-image: url('AV/X_DATEN/roses-7429225.jpg');">
+                    <div class="voucher-title">Gutschein</div>
+                    <div class="voucher-content">
+                        <div class="voucher-row">
+                            <div class="voucher-label">Für:</div>
+                            <div class="voucher-name" id="voucher-name">Name der glücklichen Person</div>
+                        </div>
+                        <div class="voucher-row">
+                            <div class="voucher-label">Über:</div>
+                            <div class="voucher-amount" id="voucher-amount">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;€</div>
+                        </div>
+                    </div>
+                    <div class="voucher-logo">Paula's Garden</div>
+                </div>
+                <p>Dein Gutschein wird durch deine Bestellung direkt hier in Paula’s Garden ausgedruckt. Du kannst ihn sofort bezahlen und mitnehmen!</p>
+            </div>
         </section>
     </main>
+    <script src="../javascript/generator.js"></script>
 </body>
+
 </html>
