@@ -1,0 +1,106 @@
+@import './style.css';
+@import './unterseite.css';
+
+main {
+    background-image: url(../imgs/events-pic-menu.png);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .text{
+    margin-bottom: 16px;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-right: 8px;
+}
+
+.workshop-box h3 {
+    font-weight: var(--fw-medium);
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.workshop-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+}
+
+.workshop-box img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px var(--shadow-color);
+}
+
+.workshop-box .inl-block {
+    display: inline-block;
+}
+
+.workshop-box .fw-medium {
+    font-weight: var(--fw-medium);
+}
+
+.workshop-box .sec-column {
+   margin-inline-start: 32px;
+}
+
+.workshop-box button {
+    font-family: var(--ff-text);
+    font-size: var(--fs-text);
+    padding: 12px 32px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+
+
+
+
+
+
+.slider-container {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    /* Firefox: schmaler, aber sichtbar */
+    scrollbar-color: var(--gray) transparent;
+    /* Standard: unsichtbar */
+}
+
+.slider-container:hover,
+.slider-container:active {
+    scrollbar-color: var(--gray) transparent;
+    /* Beim Hover/Scrollen: sichtbar */
+}
+
+.slider-container::-webkit-scrollbar {
+    height: 8px;
+    background: transparent;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.slider-container:hover::-webkit-scrollbar-thumb,
+.slider-container:active::-webkit-scrollbar-thumb {
+    background: var(--gray);
+}
+
+.slider-container::-webkit-scrollbar-track {
+    background: transparent;
+}
