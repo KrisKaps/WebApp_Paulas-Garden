@@ -3,7 +3,6 @@
 
 main {
     background-image: url(../imgs/angebote-pic-menu.png);
-    font-family: var(--ff-text);
 }
 
 .content .text{
@@ -31,13 +30,6 @@ main {
     box-shadow: 5px 5px 10px var(--shadow-color);
 }
 
-.product-box h3 {
-    font-weight: var(--fw-normal);
-    font-size: var(--fs-text);
-    margin-top: 16px;
-    margin-bottom: 8px;
-}
-
 .product-box p {
     font-size: var(--fs-small);
 }
@@ -53,18 +45,19 @@ main {
 
 
 .slider-container {
+    padding-bottom: 12px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     scrollbar-width: thin;
     /* Firefox: schmaler, aber sichtbar */
-    scrollbar-color: transparent transparent;
+    scrollbar-color: var(--gray) transparent;
     /* Standard: unsichtbar */
 }
 
 .slider-container:hover,
 .slider-container:active {
-    scrollbar-color: #bbb transparent;
+    scrollbar-color: var(--gray) transparent;
     /* Beim Hover/Scrollen: sichtbar */
 }
 
@@ -81,7 +74,7 @@ main {
 
 .slider-container:hover::-webkit-scrollbar-thumb,
 .slider-container:active::-webkit-scrollbar-thumb {
-    background: #bbb;
+    background: var(--gray);
 }
 
 .slider-container::-webkit-scrollbar-track {
