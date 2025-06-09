@@ -5,8 +5,10 @@ main {
     background-image: url(../imgs/angebote-pic-menu.png);
 }
 
-.content .text{
-    margin-bottom: 48px;
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 74px;
 }
 
 .slider {
