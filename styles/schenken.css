@@ -2,7 +2,7 @@
 @import './unterseite.css';
 
 main {
-    background-image: url(../imgs/events-pic-menu.png);
+    background-image: url(../imgs/schenken-pic-menu.png);
 }
 
 .content {
@@ -11,7 +11,7 @@ main {
     overflow-y: auto;
 }
 
-.content>* {
+.content > * {
     flex: 1;
 }
 
@@ -24,14 +24,12 @@ main {
     margin-bottom: 16px;
 }
 
-
-
 .two-col-container {
     display: flex;
     gap: 16px;
 }
 
-.two-col-container>* {
+.two-col-container > * {
     flex: 1;
 }
 
@@ -43,16 +41,6 @@ input {
     margin-top: 8px;
 }
 
-button {
-    font-family: var(--ff-text);
-    font-size: var(--fs-text);
-    padding: 12px 32px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--main-color);
-    color: white;
-}
-
 input[type=text] {
     width: 100%;
     padding: 10px;
@@ -62,94 +50,28 @@ input[type=text] {
     box-sizing: border-box;
 }
 
-.gutschein-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    overflow: hidden;
-}
-
-.voucher {
-    width: 148mm;
-    height: 105mm;
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-size: cover;
-    background-position: center;
-    color: white;
-    position: relative;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px;
-    box-sizing: border-box;
-}
-
-.voucher-title {
-    font-family: var(--ff-title);
-    font-size: var(--fs-gutschein);
-    text-align: center;
-    margin-top: 10px;
-}
-
-.voucher-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    /* Abstand zwischen den Zeilen */
-}
-
-.voucher-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    /* Abstand zwischen Label und Wert */
-}
-
-.voucher-label {
-    font-size: 18px;
-    margin: 0;
-    white-space: nowrap;
-    /* Verhindert Zeilenumbrüche */
-}
-
-.voucher-name,
-.voucher-amount {
-    font-size: 20px;
-    font-weight: bold;
-    border-bottom: 1px solid white;
-    display: inline-block;
-    width: 100%;
-    flex: 1;
-    max-width: 30ch;
-    /* Begrenzung auf 30 Zeichen */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.voucher-logo {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 14px;
-    text-align: right;
-}
-
 .controls h3 {
     margin-bottom: 10px;
 }
 
+.button {
+    width: fit-content;
+    font-family: var(--ff-text);
+    font-size: var(--fs-text);
+    padding: 12px 32px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+}
+
+
+
+/* Wähle eine Motiv */
+
 #background-options {
     width: 100%;
     display: flex;
-    gap: 10px;
 }
 
 .background-option {
@@ -168,14 +90,19 @@ input[type=text] {
 }
 
 .background-option.selected .thumbnail {
-    box-shadow: 0px 0px 0px 5px red inset;
+  border: solid 5px var(--main-color);
 }
 
 .thumbnail {
+    border: solid 5px transparent;
     width: 100%;
     border-radius: 10px;
     transition: box-shadow 0.2s;
 }
+
+
+
+/* Wähle einen Betrag */
 
 .amount-options {
     display: flex;
@@ -213,24 +140,143 @@ input[type=text] {
 }
 
 
+/* Datenschutz Checkbox */
+
+.datenschutz-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 16px 0 8px 0;
+    font-size: 18px;
+}
+
+.datenschutz-label input[type="checkbox"] {
+    margin-top: 4px;    /* vertikal leicht zentrieren */
+}
+
+
+
+/* Gutschein Container */
+
+.gutschein-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.voucher {
+    width: 148mm;
+    height: 105mm;
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.voucher-title {
+    font-family: var(--ff-title);
+    font-size: var(--fs-gutschein);
+    text-align: center;
+}
+
+.voucher-content {
+    margin-top: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;              /* Abstand zwischen den Zeilen */
+}
+
+.voucher-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;              /* Abstand zwischen Label und Wert */
+}
+
+.voucher-name,
+.voucher-amount {
+    border-bottom: 1px solid white;
+    display: inline-block;
+    padding: 0 8px;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+
+
+
+
+/* Gutschein PopUp */
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-container {
+    background-color: var(--white-90);
+    border-radius: var(--border-radius);
+    max-width: 1250px;
+    width: 90%;
+    padding: 32px;
+    display: flex;
+    gap: 32px;
+}
+
+.popup-container > * {
+    flex:1;
+}
+
+.text-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-popup .team {
+    font-weight: var(--fw-medium);
+    color: var(--main-color);
+}
+
+.text-popup .home{
+    width: 60px;
+    height: 60px;
+}
+
+
+/* Slider Container */
+
 .slider-container {
     height: 100%;
-    overflow-y: auto;
-    /* Nur vertikales Scrollen erlauben */
-    overflow-x: hidden;
-    /* Horizontales Scrollen verhindern */
+    overflow-y: auto;                           /* Nur vertikales Scrollen erlauben */
+    overflow-x: hidden;                         /* Horizontales Scrollen verhindern */
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    /* Firefox: schmaler, aber sichtbar */
-    scrollbar-color: var(--gray) transparent;
-    /* Standard: unsichtbar */
+    scrollbar-width: thin;                      /* Firefox: schmaler, aber sichtbar */
+    scrollbar-color: var(--gray) transparent;   /* Standard: unsichtbar */
 }
 
 .slider-container:hover,
 .slider-container:active {
-    scrollbar-color: var(--gray) transparent;
-    /* Beim Hover/Scrollen: sichtbar */
+    scrollbar-color: var(--gray) transparent;   /* Beim Hover/Scrollen: sichtbar */
 }
 
 .slider-container::-webkit-scrollbar {
@@ -251,22 +297,4 @@ input[type=text] {
 
 .slider-container::-webkit-scrollbar-track {
     background: transparent;
-}
-
-.datenschutz-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin: 16px 0 8px 0;
-    font-size: 18px;
-}
-
-.datenschutz-label input[type="checkbox"] {
-    margin-top: 4px;
-    /* vertikal leicht zentrieren */
-}
-
-.datenschutz-label span {
-    line-height: 1.3;
-    font-size: 18px;
 }

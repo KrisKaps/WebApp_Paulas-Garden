@@ -22,6 +22,18 @@ backgroundContainer.addEventListener('click', (event) => {
     } else {
         console.error('Invalid background URL');
     }
+
+    // Farbe anpassen je nach Motiv
+    const altText = img?.alt?.toLowerCase() || "";
+    if (altText.includes("flowerpower")) {
+        voucherPreview.style.color = "black";
+        voucherName.style.borderBottom = "1px solid black";
+        voucherAmount.style.borderBottom = "1px solid black";
+    } else {
+        voucherPreview.style.color = "white";
+        voucherName.style.borderBottom = "1px solid white";
+        voucherAmount.style.borderBottom = "1px solid white";
+    }
 });
 
 const debounce = (func, delay) => {
@@ -87,3 +99,51 @@ if (customRadio && customInput) {
     }
     updateVoucherAmount();
 }
+
+function showPopupVoucher() {
+    // Werte aus dem Formular holen
+    const name = document.getElementById('name-input').value || 'Name der glücklichen Person';
+    const amountRadio = document.querySelector('input[name="amount"]:checked');
+    let amount = '';
+    if (amountRadio) {
+        if (amountRadio.value === 'custom') {
+            amount = document.getElementById('custom-amount-input').value.replace('.', ',') + ' €';
+        } else {
+            amount = amountRadio.value + ' €';
+        }
+    }
+    // Motiv holen
+    const selectedBg = document.querySelector('.background-option.selected .thumbnail');
+    const bgUrl = selectedBg ? selectedBg.getAttribute('data-bg') : '../imgs/gutschein-spooky-halloween.png';
+    const altText = selectedBg?.alt?.toLowerCase() || "";
+    const voucherColor = altText.includes("flowerpower") ? "black" : "white";
+    const borderColor = voucherColor;
+
+    // Gutschein-HTML bauen
+    const voucherHTML = `
+        <div class="voucher" style="background-image: url('${bgUrl}'); color: ${voucherColor};">
+            <div class="voucher-title">Gutschein</div>
+            <div class="voucher-content">
+                <div class="voucher-row">
+                    <div class="voucher-label">Für:</div>
+                    <div class="voucher-name" style="border-bottom: 1px solid ${borderColor};">${name}</div>
+                </div>
+                <div class="voucher-row">
+                    <div class="voucher-label">Über:</div>
+                    <div class="voucher-amount" style="border-bottom: 1px solid ${borderColor};">${amount}</div>
+                </div>
+            </div>
+        </div>
+    `;
+    document.getElementById('popup-voucher').innerHTML = voucherHTML;
+}
+
+// Beispiel: Formular-Submit abfangen
+document.querySelector('form.slider').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (this.checkValidity()) {
+        showPopupVoucher();
+        document.querySelector('.popup').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Scrollen verhindern
+    }
+});
