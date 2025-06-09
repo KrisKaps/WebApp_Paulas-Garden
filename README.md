@@ -1,5 +1,4 @@
 # WebApp_Paulas-Garden
- 
 
 Abschlussprüfung der Ausbildung zum Mediengestalter 2025 - Digital
 
