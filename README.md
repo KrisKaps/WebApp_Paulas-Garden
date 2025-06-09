@@ -1,9 +1,8 @@
-# WebApp_Paulas-Garden
 
 Abschlussprüfung der Ausbildung zum Mediengestalter 2025 - Digital
 
 ## Prüfling:
-Name: Christian Knist Pereira dos Santos
+Name: Christian Knist Pereira dos Santos<br>
 Prüflingsnummer: 179 6122
 
 ## Prüfungsthema:
