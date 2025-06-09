@@ -2,7 +2,7 @@
     --main-color: #75A394;
     --darker-main-color: #5B8477;
 
-    --shadow-color: #5b847733;
+    --shadow-color: #5b847780;
     --gray: #bbb;
     --gray-90: #f2f2f2E6;
     --white-90: #FFFFFFE6;
@@ -52,7 +52,7 @@ main {
     width: 100%;
     max-width: 1366px;
     aspect-ratio: 1366 / 1024;
-    padding: 30px;
+    padding: 32px;
 
     background-color: var(--darker-main-color);
     font-family: var(--ff-text);
@@ -64,7 +64,7 @@ header {
     justify-content: center;
     background-color: var(--gray-90);
     border-radius: var(--border-radius);
-    padding: 20px;
+    padding: 16px;
 }
 
 .logo {

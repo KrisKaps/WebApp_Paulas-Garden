@@ -10,7 +10,7 @@ main {
 }
 
 header {
-    padding: 20px 48px;
+    padding: 16px 48px;
     justify-content: space-between;
     align-items: center;
 }
@@ -32,7 +32,7 @@ header h1 {
     padding: 32px;
     background-color: var(--gray-90);
     border-radius: var(--border-radius);
-    height: 700px;
+    height: 750px;
 }
 
 h2 {
