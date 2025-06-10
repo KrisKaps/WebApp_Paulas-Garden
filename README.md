@@ -53,3 +53,7 @@ Version: 26.8.0
 ### Vektorgrafikprogramm:
 Adobe Illustrator
 Version: 28.3
+
+## Weitere Hinweise
+
+Codeabschnitte der Implementierung der Web-Applikation, insbesondere des Gutscheingenerators und der Slider wurden mit Hilfe von ChatGPT und Github Copilot erstellt und erweitert.
